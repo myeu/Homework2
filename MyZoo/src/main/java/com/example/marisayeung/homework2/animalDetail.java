@@ -18,15 +18,16 @@ import java.io.InputStream;
 
 public class animalDetail extends AppCompatActivity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animal_detail);
 
+        Intent intent = getIntent();
+        String animal = intent.getStringExtra(animalList.ANIMAL_NAME);
+
         TextView name = (TextView) findViewById(R.id.animal_name);
-        name.setText("NAMEZ");
+        name.setText(animal);
 
         try {
             ImageView image = (ImageView) findViewById(R.id.animal_image);

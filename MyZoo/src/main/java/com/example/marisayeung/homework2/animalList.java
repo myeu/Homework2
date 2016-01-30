@@ -18,7 +18,7 @@ import java.util.List;
 
 public class animalList extends AppCompatActivity {
 
-    public final static String ANIMAL_NAME = "com.mycompany.myfirstapp.ANIMAL_NAME";
+    public final static String ANIMAL_NAME = "com.example.marisyeung.homework2.ANIMAL_NAME";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +52,9 @@ public class animalList extends AppCompatActivity {
 
     public void viewDetail(View view) {
         Intent intent = new Intent(this, animalDetail.class);
-        TextView name = (TextView) findViewById(R.id.rowText);
-        String message = name.getText().toString();
-        intent.putExtra(ANIMAL_NAME, message);
+        TextView nameView = (TextView) findViewById(R.id.rowText);
+        String name = nameView.getText().toString();
+        intent.putExtra(ANIMAL_NAME, name);
         startActivity(intent);
     }
 
