@@ -1,5 +1,6 @@
 package com.example.marisayeung.homework2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,11 +11,14 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class animalList extends AppCompatActivity {
+
+    public final static String ANIMAL_NAME = "com.mycompany.myfirstapp.ANIMAL_NAME";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,15 @@ public class animalList extends AppCompatActivity {
             }
         });
     }
+
+    public void viewDetail(View view) {
+        Intent intent = new Intent(this, animalDetail.class);
+        TextView name = (TextView) findViewById(R.id.rowText);
+        String message = name.getText().toString();
+        intent.putExtra(ANIMAL_NAME, message);
+        startActivity(intent);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

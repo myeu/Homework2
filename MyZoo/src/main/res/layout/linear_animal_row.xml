@@ -18,6 +18,7 @@
         android:text="Animal Name"
         android:textSize="32dp"
         android:id="@+id/rowText"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:onClick="viewDetail"/>
 
 </LinearLayout>
