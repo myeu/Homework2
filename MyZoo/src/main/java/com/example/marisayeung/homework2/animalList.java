@@ -8,13 +8,28 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class animalList extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_animal_list);
+        setContentView(R.layout.linear_animal_row);
+
+        ListView listView = (ListView) findViewById(R.id.custom_animal_list_view);
+
+        List<Animal> animal = new ArrayList<>();
+        animal.add(new Animal("elephant.jpg", "Elephant"));
+        animal.add(new Animal("alpaca.jpg", "Alpaca"));
+        animal.add(new Animal("giraffe.jpg", "Giraffe"));
+        animal.add(new Animal("monkey.jpg", "Monkey"));
+
+        listView.setAdapter(new AnimalAdapter(this, R.layout.linear_animal_row, animal));
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
