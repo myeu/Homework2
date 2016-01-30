@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,17 +19,19 @@ public class animalList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.linear_animal_row);
+        setContentView(R.layout.activity_animal_list);
 
         ListView listView = (ListView) findViewById(R.id.custom_animal_list_view);
 
-        List<Animal> animal = new ArrayList<>();
-        animal.add(new Animal("elephant.jpg", "Elephant"));
-        animal.add(new Animal("alpaca.jpg", "Alpaca"));
-        animal.add(new Animal("giraffe.jpg", "Giraffe"));
-        animal.add(new Animal("monkey.jpg", "Monkey"));
+        Log.d("mine", "listView: " + listView);
 
-        listView.setAdapter(new AnimalAdapter(this, R.layout.linear_animal_row, animal));
+        List<Animal> animals = new ArrayList<>();
+        animals.add(new Animal("elephant.jpg", "Elephant"));
+        animals.add(new Animal("alpaca.jpg", "Alpaca"));
+        animals.add(new Animal("giraffe.jpg", "Giraffe"));
+        animals.add(new Animal("monkey.jpg", "Monkey"));
+        AnimalAdapter animalAdapter = new AnimalAdapter(this, R.layout.linear_animal_row, animals);
+        listView.setAdapter(animalAdapter);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
