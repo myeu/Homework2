@@ -31,7 +31,7 @@ public class animalDetail extends AppCompatActivity {
 
         try {
             ImageView image = (ImageView) findViewById(R.id.animal_image);
-            InputStream inputStream = getAssets().open("alpaca.jpg");
+            InputStream inputStream = getAssets().open(intent.getStringExtra(animalList.ANIMAL_IMG));
             Drawable drawable = Drawable.createFromStream(inputStream, null);
             image.setImageDrawable(drawable);
         } catch (IOException e) {

@@ -1,6 +1,7 @@
 package com.example.marisayeung.homework2;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -18,7 +20,8 @@ import java.util.List;
 
 public class animalList extends AppCompatActivity {
 
-    public final static String ANIMAL_NAME = "com.example.marisyeung.homework2.ANIMAL_NAME";
+    public final static String ANIMAL_NAME = "MyZoo.animal_name";
+    public final static String ANIMAL_IMG = "MyZoo.animal_img";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +30,22 @@ public class animalList extends AppCompatActivity {
 
         ListView listView = (ListView) findViewById(R.id.custom_animal_list_view);
 
-        Log.d("mine", "listView: " + listView);
-
         List<Animal> animals = new ArrayList<>();
         animals.add(new Animal("elephant.jpg", "Elephant"));
         animals.add(new Animal("alpaca.jpg", "Alpaca"));
         animals.add(new Animal("giraffe.jpg", "Giraffe"));
         animals.add(new Animal("monkey.jpg", "Monkey"));
+
         AnimalAdapter animalAdapter = new AnimalAdapter(this, R.layout.linear_animal_row, animals);
         listView.setAdapter(animalAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
+                Animal animal = (Animal) adapter.getItemAtPosition(position);
+                viewDetail(animal);
+            }
+        });
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -50,11 +60,10 @@ public class animalList extends AppCompatActivity {
         });
     }
 
-    public void viewDetail(View view) {
+    public void viewDetail(Animal animal) {
         Intent intent = new Intent(this, animalDetail.class);
-        TextView nameView = (TextView) findViewById(R.id.rowText);
-        String name = nameView.getText().toString();
-        intent.putExtra(ANIMAL_NAME, name);
+        intent.putExtra(ANIMAL_NAME, animal.getName());
+        intent.putExtra(ANIMAL_IMG, animal.getPictureName());
         startActivity(intent);
     }
 
