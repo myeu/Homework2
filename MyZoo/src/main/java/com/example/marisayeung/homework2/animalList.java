@@ -31,6 +31,16 @@ public class animalList extends AppCompatActivity {
         animals.add(new Animal("alpaca.jpg", "Alpaca"));
         animals.add(new Animal("giraffe.jpg", "Giraffe"));
         animals.add(new Animal("monkey.jpg", "Monkey"));
+        animals.add(new Animal("flamingo.jpg", "Flamingo"));
+        animals.add(new Animal("pig.jpg", "Pig"));
+        animals.add(new Animal("rhino.jpg", "Rhino"));
+        animals.add(new Animal("wolf.jpg", "Wolf"));
+        animals.add(new Animal("fox.jpg", "Fox"));
+        animals.add(new Animal("kangaroo.jpg", "Kangaroo"));
+        animals.add(new Animal("bobcat.jpg", "Bobcat"));
+        animals.add(new Animal("crane.jpg", "Crane"));
+        animals.add(new Animal("zebu.jpg", "Zebu"));
+        animals.add(new Animal("duckling.jpg", "Duckling"));
 
         AnimalAdapter animalAdapter = new AnimalAdapter(this, R.layout.linear_animal_row, animals);
         listView.setAdapter(animalAdapter);
