@@ -22,19 +22,22 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Hours of operation:"
+            android:text="Hours"
             android:textSize="20dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:gravity="right"
+            android:paddingEnd="15dp"/>
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="7am-7pm Daily"
+            android:text="7am - 7pm Daily"
             android:textSize="20dp"
             android:layout_weight="2"/>
 
@@ -43,17 +46,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Address:"
+            android:text="Address"
             android:textSize="20dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:gravity="right"
+            android:paddingEnd="15dp"/>
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="1000 Brewster Ave., Redwood City, CA 94062"
             android:textSize="20dp"
@@ -64,17 +70,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Phone Number:"
+            android:text="Phone"
             android:textSize="20dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:gravity="right"
+            android:paddingEnd="15dp"/>
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="(888) 888-888"
             android:textSize="20dp"
