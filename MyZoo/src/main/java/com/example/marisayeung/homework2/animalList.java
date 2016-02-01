@@ -2,8 +2,6 @@ package com.example.marisayeung.homework2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -69,6 +67,6 @@ public class animalList extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        return MenuHelper.handleOnItemSelected(item);
+        return MenuHelper.handleOnItemSelected(this, item);
     }
 }
