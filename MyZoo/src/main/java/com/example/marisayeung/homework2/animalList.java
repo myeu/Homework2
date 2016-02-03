@@ -1,5 +1,6 @@
 package com.example.marisayeung.homework2;
 
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,8 @@ public class animalList extends AppCompatActivity {
 
     public final static String ANIMAL_NAME = "MyZoo.animal_name";
     public final static String ANIMAL_IMG = "MyZoo.animal_img";
+
+    private Animal alert_animal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +52,14 @@ public class animalList extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
                 Animal animal = (Animal) adapter.getItemAtPosition(position);
-                viewDetail(animal);
+
+                if (animal.getName().equals("Duckling")) {
+                    AnimalDangerDialogFragment fragment = new AnimalDangerDialogFragment();
+                    fragment.show(getFragmentManager(), "danger");
+                    alert_animal = animal;
+                } else {
+                    viewDetail(animal);
+                }
             }
         });
 
@@ -64,6 +74,9 @@ public class animalList extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onYes() {
+        viewDetail(alert_animal);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
