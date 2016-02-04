@@ -36,7 +36,7 @@ public class animalDetail extends AppCompatActivity {
         }
 
         TextView details = (TextView) findViewById(R.id.animal_detail);
-        details.setText(R.string.sample_detail);
+        details.setText(intent.getStringExtra(animalList.ANIMAL_DESCRIPTION));
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -44,16 +44,13 @@ public class animalDetail extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // Inflate the menu;
         getMenuInflater().inflate(R.menu.menu_animal_list, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         return MenuHelper.handleOnItemSelected(this, item);
     }
 

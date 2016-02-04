@@ -12,24 +12,31 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.marisayeung.homework2.animalDetail"
     tools:showIn="@layout/activity_animal_detail">
-
-    <TextView
+    <ScrollView android:id="@+id/ScrollView01"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:textSize="32dp"
-        android:id="@+id/animal_name"/>
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_margin="4dp"
-        android:id="@+id/animal_image"
-        android:layout_gravity="center_horizontal"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:textSize="20dp"
-        android:id="@+id/animal_detail"/>
-
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:textSize="32dp"
+                android:id="@+id/animal_name"/>
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_margin="4dp"
+                android:id="@+id/animal_image"
+                android:layout_gravity="center_horizontal"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:textSize="20dp"
+                android:id="@+id/animal_detail"/>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
