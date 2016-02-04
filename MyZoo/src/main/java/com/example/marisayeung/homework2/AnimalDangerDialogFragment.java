@@ -7,8 +7,9 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 
 /**
- * Created by marisayeung on 2/1/16.
+ * Created by Marisa Yeung on 1/29/16.
  */
+
 public class AnimalDangerDialogFragment extends DialogFragment {
 
     @Override
@@ -19,7 +20,7 @@ public class AnimalDangerDialogFragment extends DialogFragment {
         builder.setMessage(R.string.dialog_animal_danger)
                 .setPositiveButton(R.string.proceed, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        // FIRE ZE MISSILES!
+//                        show the animal detail
                         ((animalList) getActivity()).onYes();
                         dialog.dismiss();
                     }

@@ -13,6 +13,10 @@ import android.widget.TextView;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * Created by Marisa Yeung on 1/29/16.
+ */
+
 public class animalDetail extends AppCompatActivity {
 
     @Override

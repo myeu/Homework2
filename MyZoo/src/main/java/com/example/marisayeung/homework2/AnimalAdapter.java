@@ -14,8 +14,9 @@ import java.io.InputStream;
 import java.util.List;
 
 /**
- * Created by marisayeung on 1/29/16.
+ * Created by Marisa Yeung on 1/29/16.
  */
+
 public class AnimalAdapter extends ArrayAdapter<Animal> {
 
     private final List<Animal> animals;

@@ -1,8 +1,9 @@
 package com.example.marisayeung.homework2;
 
 /**
- * Created by marisayeung on 1/29/16.
+ * Created by Marisa Yeung on 1/29/16.
  */
+
 public class Animal {
 
     public Animal(String pictureName, String Name, String description) {
@@ -28,15 +29,7 @@ public class Animal {
         Name = name;
     }
 
-    public void setPictureName(String pictureName) {
-        this.pictureName = pictureName;
-    }
-
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 }

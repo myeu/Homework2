@@ -1,12 +1,10 @@
 package com.example.marisayeung.homework2;
 
-import android.app.DialogFragment;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,12 +14,23 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Created by Marisa Yeung on 1/29/16.
+ *
+ * Activity that displays on launch.
+ *
+ * Displays a list of animals in a zoo, with image icon and name
+ *
+ */
+
 public class animalList extends AppCompatActivity {
 
+//    Easy handles for the unique extra names
     public final static String ANIMAL_NAME = "MyZoo.animal_name";
     public final static String ANIMAL_IMG = "MyZoo.animal_img";
     public final static String ANIMAL_DESCRIPTION = "MyZoo.animal_description";
 
+//    save the animal that the dialog warns against
     private Animal alert_animal;
 
     @Override
@@ -56,9 +65,11 @@ public class animalList extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
                 Animal animal = (Animal) adapter.getItemAtPosition(position);
 
+//                Warn against the last animal in the list
                 if (animal.getName().equals("Duckling")) {
                     AnimalDangerDialogFragment fragment = new AnimalDangerDialogFragment();
                     fragment.show(getFragmentManager(), "danger");
+//                    this executes asynchronously, don't viewDetail here, save for later
                     alert_animal = animal;
                 } else {
                     viewDetail(animal);
@@ -78,6 +89,7 @@ public class animalList extends AppCompatActivity {
         startActivity(intent);
     }
 
+//    Dialog box response was Yes proceed to animal detail
     public void onYes() {
         viewDetail(alert_animal);
     }
